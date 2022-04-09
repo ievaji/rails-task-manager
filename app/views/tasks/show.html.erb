@@ -1,0 +1,12 @@
+<h1><%= @task.title %></h1>
+
+<p class="details"><%= @task.details %></p>
+
+<%= form_for(@task) do |f| %>
+  <%= f.check_box :completed, disabled: "true" %>
+  <%= f.label :completed %>
+<% end %>
+
+<p><button><%= link_to "Edit", edit_task_path(@task) %></button></p>
+
+<p class="link"><%= link_to "<< Back to Task List", tasks_path %></p>
